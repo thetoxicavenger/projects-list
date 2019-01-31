@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "title": "Rewrite Our Core App in Vue",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+      "company": "MetaWorld",
+      "description": "Our current customer CRM is written in Angular 1, which is becoming cumbersome to maintain in the face of more modern web technologies like React and Vue. Use Vue to refactor our client-facing CRM to a more modern web architecture.",
+      "skillset": "javascript"
+    },
+    {
+      "id": 1,
+      "title": "Design A Logo For Our Company",
+      "thumbnail": "https://statewideguttercompany.com/wp-content/uploads/2012/07/logo-placeholder.jpg",
+      "company": "Statewide Gutter Company",
+      "description": "Statewide Gutter Company was recently founded by two brothers, Mitchell and Matthew Cravens. We need a logo that reflects our commitment to family values and integrity. Please make sure the logo is perfectly square so that we can easily implement it in our marketing materials.",
+      "skillset": "design"
+    },
+    {
+      "id": 2,
+      "title": "Migrate Our DB from SQL to Mongo",
+      "thumbnail": "https://banner2.kisspng.com/20171202/4a0/database-free-download-png-5a22aad4e16b56.2847272415122213969233.jpg",
+      "company": "Cat Food Mavens",
+      "description": "Cat Food Mavens is a wholesaler of organic cat food. We have thousands of products in our current PostgresSQL database, and all the rows and column names are becoming difficult to maintain. Migrate our schema to NoSQL and we'll pay you $10,000.",
+      "skillset": "database"
+    },
+    {
+      "id": 3,
+      "title": "Rebrand Us To A Wider Audience",
+      "thumbnail": "https://cdn-images-1.medium.com/max/1600/1*Ep0Bhfa157h6WoMHPj0NuQ.jpeg",
+      "company": "FinanSeal",
+      "description": "FinanSeal provides loans to non-profits involved in the care and maintenance of the world's seal populations. Recently, we have struggled to remain in the black due to a lack of consumer interest and donations. We need to overhaul our marketing and donor engagement strategy - that's where you come in.",
+      "skillset": "marketing"
+    }
+  ]
+}

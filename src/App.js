@@ -1,25 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FilterProjects from './components/FilterProjects'
+import ProjectsList from './components/ProjectsList'
 
 class App extends Component {
+  state = {
+    projects: [],
+    error: false,
+    filter: ""
+  }
+  componentDidMount = async () => {
+    try {
+      const res = await fetch('http://localhost:5000/projects')
+      if (!res.ok) {
+        throw new Error('Bad res from API.')
+      }
+      const json = await res.json()
+      this.setState({
+        projects: json
+      })
+    } catch (e) {
+      this.setState({
+        error: true
+      })
+    }
+    
+  }
+  setFilter = filter => {
+    this.setState({
+      filter
+    })
+  }
   render() {
+    const filteredProjects = this.state.projects.filter(project => project.skillset.includes(this.state.filter.toLowerCase()))
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1 style={{ textAlign: 'center' }}>G-Projects</h1>
+        <div>
+          <h3>Available Projects</h3>
+        </div>
+        {!this.state.error ? 
+          <>
+            {this.state.projects.length > 0 && <FilterProjects filter={this.state.filter} setFilter={this.setFilter} />}
+            <ProjectsList projects={filteredProjects} error={this.state.error} />
+          </>
+        : <div style={{ color: 'red' }}>Error! Please contact support.</div>
+      }
+        
       </div>
     );
   }
